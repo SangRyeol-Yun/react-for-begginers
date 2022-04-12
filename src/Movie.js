@@ -26,7 +26,11 @@ function Movie() {
                         <div key={photo.id}>
                             <img src={photo.thumbnailUrl} alt={photo.title} />
                             <h2>
-                                <a href={photo.url}>{photo.title}</a>
+                                <a href={photo.url}>
+                                    {photo.title.length > 20
+                                        ? `${photo.title.slice(0, 20)}...`
+                                        : photo.title}
+                                </a>
                             </h2>
                         </div>
                     ))}
